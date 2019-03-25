@@ -1,23 +1,52 @@
 package ru.avalon.java.dev.j10.labs;
 
-import ru.avalon.java.dev.j10.labs.shapes.Shape;
+import ru.avalon.java.dev.j10.labs.shapes.*;
+
+import java.util.Random;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Shape[] shapes = null;
+    public static void main(String[] args){
+        Random random = new Random();
+        Shape[] shapes = new Shape[10];
+        shapes[0] = new Circle(random.nextInt(10));
+        shapes[1] = new Circle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
+        shapes[2] = new Circle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
+        shapes[3] = new Triangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
+        shapes[4] = new Triangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
+        shapes[5] = new Triangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
+        shapes[6] = new Rectangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
+        shapes[7] = new Rectangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
+        shapes[8] = new Rectangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
+        shapes[9] = new Rectangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
 
-        /*
-         * TODO: Выполнить действия над массивом 'shapes'
-         *
-         * 1. Проинициализировать переменную 'shapes' массивом
-         *    содержащим 10 произвольных фигур. Массив должен
-         *    содержать экземпляры классов Circle, Rectangle
-         *    и Triangle.
-         *
-         * 2. Найти в массиве 'shapes' фигуру с максимальной
-         *    площадью. Для поиска фигуры необходимо создать
-         *    статический метод в текущем классе (Main).
-         */
+        Shape shapeWithMaxArea = getShapeWithMaxArea(shapes);
+    }
+
+    public static Shape getShapeWithMaxArea(Shape[] shapes) {
+        if (shapes.length == 1){
+            return shapes[0];
+        }
+        float maxArea = 0;
+        Shape shapeWithMaxArea = shapes[0];
+        for (int i = 0; i <shapes.length; i++){
+            if (maxArea < shapes[i].getArea()){
+                maxArea = shapes[i].getArea();
+                shapeWithMaxArea = shapes[i];
+            }
+        }
+        return shapeWithMaxArea;
     }
 }
