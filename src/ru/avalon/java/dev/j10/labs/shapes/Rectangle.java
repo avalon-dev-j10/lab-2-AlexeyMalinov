@@ -21,6 +21,7 @@ public class Rectangle implements Polygon {
      * Дополнительные точки создаются внутри конструктора таким образом,
      * чтобы выполнялось условие: "все углы прямоугольника прямые (90 градусов)"
      * Задается угол поворота фигуры
+     *
      * @param a
      * @param b
      * @param rotation
@@ -44,10 +45,7 @@ public class Rectangle implements Polygon {
      */
     @Override
     public float getPerimeter() {
-        return (a.distanceTo(c) +
-                c.distanceTo(b) +
-                b.distanceTo(d) +
-                d.distanceTo(a));
+        return (2 * (a.distanceTo(c) + c.distanceTo(b)));
     }
 
     /**

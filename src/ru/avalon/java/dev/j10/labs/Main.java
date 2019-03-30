@@ -8,30 +8,41 @@ public class Main {
 
     public static void main(String[] args){
         Random random = new Random();
-        Shape[] shapes = new Shape[10];
-        shapes[0] = new Circle(random.nextInt(10));
-        shapes[1] = new Circle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
-        shapes[2] = new Circle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
-        shapes[3] = new Triangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
-        shapes[4] = new Triangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
-        shapes[5] = new Triangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
-        shapes[6] = new Rectangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
-        shapes[7] = new Rectangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
-        shapes[8] = new Rectangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
-        shapes[9] = new Rectangle(new PointOnPlane(random.nextInt(10), random.nextInt(10)),
-                new PointOnPlane(random.nextInt(10), random.nextInt(10)));
-
+        Shape[] shapes = {
+                new Circle(random.nextInt(10)),
+                new Circle(random.nextInt(10)),
+                new Circle(random.nextInt(10)),
+                new Triangle(
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10))),
+                new Triangle(
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10))
+                ),
+                new Triangle(
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10))
+                ),
+                new Rectangle(
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10))
+                ),
+                new Rectangle(
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10))
+                ),
+                new Rectangle(
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10))
+                ),
+                new Rectangle(
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10)),
+                        new PointOnPlane(random.nextInt(10), random.nextInt(10))
+                ),
+        };
         Shape shapeWithMaxArea = getShapeWithMaxArea(shapes);
     }
 
